@@ -9,6 +9,28 @@ namespace Algorithms_DataStruct_Lib
     public class Sorting
     {
 
+        public static void SelectionSort(int[] array)
+        {
+            for(int wall = array.Length -1;wall > 0;wall--)
+            {
+                int maxValueIndex = 0;
+                for(int i = 1;i <= wall;i++)
+                {
+                    if(array[i] > array[maxValueIndex])
+                    {
+                        maxValueIndex = i;
+                    }
+                }
+
+                Swap(array, wall, maxValueIndex);
+
+            }
+        }
+
+
+
+
+
 
         public static void BubbleSort(int[] array)
         {

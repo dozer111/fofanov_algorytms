@@ -10,7 +10,8 @@ namespace Algs
         static void Main(string[] args)
         {
             //TestTimeComplexityOnKints();
-            AlgsPraticeTest.TestBubbleSort();
+            //AlgsPraticeTest.TestBubbleSort();
+            AlgsPraticeTest.TestSelectionSort();
         }
 
         // самые первые занятия, когда показывался подсчет времени

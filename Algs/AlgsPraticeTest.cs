@@ -34,6 +34,33 @@ namespace Algs
             }
 
         }
+
+        public static void TestSelectionSort()
+        {
+            int[][] samples = new int[7][];
+
+            samples[0] = new int[1] { 147 };
+            samples[1] = new int[2] { 51, 97 };
+            samples[2] = new int[3] { 107, 228, 187 };
+            samples[3] = new int[4] { 90, 126, 252, 140 };
+            samples[4] = new int[5] { 37, 163, 240, 83, 117 };
+            samples[5] = new int[6] { 160, 220, 18, 24, 56, 252 };
+            samples[6] = new int[7] { 91, 183, 41, 89, 137, 160, 98 };
+
+
+            for (int i = 0; i < samples.Length; i++)
+            {
+                Console.WriteLine($"\nInsertsSort: {i+1}");
+                Sorting.SelectionSort(samples[i]);
+                foreach (var el in samples[i])
+                {
+                    Console.Write($"{el} ");
+                }
+
+            }
+
+        }
+
     }
 
     
