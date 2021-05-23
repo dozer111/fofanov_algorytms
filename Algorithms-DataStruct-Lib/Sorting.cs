@@ -10,6 +10,29 @@ namespace Algorithms_DataStruct_Lib
     // сортировка массива по возрастанию
     public class Sorting
     {
+        public static void ShellSort(int[] array)
+        {
+            // 1 определяемся с gap
+            int gap = 1;
+            while (gap < array.Length / 3)
+            {
+                gap = 3 * gap + 1;
+            }
+
+            // PREorder + sorting(если gap == 1)
+            while (gap >= 1)
+            {
+                for (int i = gap; i < array.Length; i++)
+                {
+                    for (int j = i; j >= gap && array[j] < array[j - gap]; j -= gap)
+                    {
+                        Swap(array, j, j - gap);
+                    }
+                }
+                gap /= 3;
+            }
+        }
+
         // Проходим по массиву, изначально в голове формируется отсортированный массив с 1 елем
         // Поставили wall на alreadySortedArray.Length
         // Взяли значение wall, это текущее неотсортированное значение currUnsorted
@@ -24,13 +47,13 @@ namespace Algorithms_DataStruct_Lib
         // Главный плюс перед selectionSort и bubbleSort - в идеале сложность может быть линейной
         public static void InsertionSort(int[] array)
         {
-            for(int wall = 1;wall < array.Length; wall++)
+            for (int wall = 1; wall < array.Length; wall++)
             {
                 int currentUnsorted = array[wall];
 
                 // индекс, в который мы в конечтном итоге вставим неотсортированное значение
                 int i = 0;
-                for(i=wall;i > 0 && array[i-1] > currentUnsorted;i--)
+                for (i = wall; i > 0 && array[i - 1] > currentUnsorted; i--)
                 {
                     array[i] = array[i - 1];
                 }
@@ -39,7 +62,7 @@ namespace Algorithms_DataStruct_Lib
             }
         }
 
-        
+
         // Проходим по массиву, находим максимальное число 
         // меняем их местами с текущим хвостом
         // 

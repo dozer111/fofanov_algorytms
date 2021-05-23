@@ -12,7 +12,9 @@ namespace Algs
             //TestTimeComplexityOnKints();
             //AlgsPraticeTest.TestBubbleSort();
             //AlgsPraticeTest.TestSelectionSort();
-            AlgsPraticeTest.TestInsertionSort();
+            //AlgsPraticeTest.TestInsertionSort();
+            //AlgsPraticeTest.TestShellSort();
+            AlgsPraticeTest.TestAll();
         }
 
         // самые первые занятия, когда показывался подсчет времени
