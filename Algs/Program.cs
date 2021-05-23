@@ -11,7 +11,8 @@ namespace Algs
         {
             //TestTimeComplexityOnKints();
             //AlgsPraticeTest.TestBubbleSort();
-            AlgsPraticeTest.TestSelectionSort();
+            //AlgsPraticeTest.TestSelectionSort();
+            AlgsPraticeTest.TestInsertionSort();
         }
 
         // самые первые занятия, когда показывался подсчет времени
@@ -22,7 +23,7 @@ namespace Algs
             /// 4 => 10.26s
             /// 8 => 1m20s
             ///
-            var ints = In.ReadInts("4Kints.txt").ToArray();
+            var ints = In.ReadInts("4Kints.txt").ToArray(); 
 
             var watch = new Stopwatch();
             watch.Start();
