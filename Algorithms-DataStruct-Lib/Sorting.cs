@@ -10,6 +10,64 @@ namespace Algorithms_DataStruct_Lib
     // сортировка массива по возрастанию
     public class Sorting
     {
+
+        public static void MergeSort(int[] array)
+        {
+            int[] auxilaryArray = new int[array.Length];
+
+            Sort(0, array.Length - 1);
+
+            /* верхняя/нижняя граница */
+            void Sort(int lowerBoundary,int higherBoundary)
+            {
+                if (higherBoundary <= lowerBoundary)
+                    return;
+
+                // правые подмассивы будут больше левых в случае невозможности разделить их на ровные части
+                int midIndex = (higherBoundary + lowerBoundary) / 2;
+
+                // начинаем разделение массивов на сиблинги
+                Sort(lowerBoundary, midIndex);
+                Sort(midIndex+1, higherBoundary);
+
+                Merge(lowerBoundary, midIndex, higherBoundary);
+            }
+
+            void Merge(int low,int mid,int high) {
+
+                if (array[mid] <= array[mid + 1])
+                    return;
+
+
+                // i - первый елем левого массива
+                // j - первый елем правого массива
+                int i = low;
+                int j = mid + 1;
+
+                Array.Copy(array, low, auxilaryArray, low, high - low + 1);
+
+                for(int k = low;k <= high;k++)
+                {
+                    if (i > mid) array[k] = auxilaryArray[j++];
+                    else if (j > high) array[k] = auxilaryArray[i++];
+                    else if (auxilaryArray[j] < auxilaryArray[i]) array[k] = auxilaryArray[j++];
+                    else array[k] = auxilaryArray[i++];
+                }
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
         public static void ShellSort(int[] array)
         {
             // 1 определяемся с gap

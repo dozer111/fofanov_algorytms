@@ -14,7 +14,8 @@ namespace Algs
             //AlgsPraticeTest.TestSelectionSort();
             //AlgsPraticeTest.TestInsertionSort();
             //AlgsPraticeTest.TestShellSort();
-            AlgsPraticeTest.TestAll();
+            AlgsPraticeTest.TestMergeSortWithLogs();
+            //AlgsPraticeTest.TestAll();
         }
 
         // самые первые занятия, когда показывался подсчет времени
